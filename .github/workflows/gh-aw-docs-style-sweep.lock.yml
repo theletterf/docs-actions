@@ -1,4 +1,4 @@
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"cb499f41a66c6b20e9a2df33cd7585d2e276e37d254a1e0bd36cc30e4054669a","compiler_version":"v0.71.5","agent_id":"copilot"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"d6481b3b8d1c70b88dbe07ec4b39e4962e41c94cd6b446b4340038e9411d3998","compiler_version":"v0.71.5","agent_id":"copilot"}
 # gh-aw-manifest: {"version":1,"secrets":["COPILOT_GITHUB_TOKEN","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN"],"actions":[{"repo":"actions/checkout","sha":"de0fac2e4500dabe0009e67214ff5f5447ce83dd","version":"v6"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"373c709c69115d41ff229c7e5df9f8788daa9553","version":"v9"},{"repo":"actions/github-script","sha":"3a2844b7e9c422d3c10d287c895573f7108da1b3","version":"v9.0.0"},{"repo":"actions/setup-node","sha":"48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e","version":"v6.4.0"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"b8068426813005612b960b5ab0b8bd2c27142323","version":"v0.71.5"}],"containers":[{"image":"ghcr.io/github/gh-aw-firewall/agent:0.25.40","digest":"sha256:14ff567e8d9d4c2fbc5e55c973488381c71d7e0fdbe72d30ee7b8a738fd86504","pinned_image":"ghcr.io/github/gh-aw-firewall/agent:0.25.40@sha256:14ff567e8d9d4c2fbc5e55c973488381c71d7e0fdbe72d30ee7b8a738fd86504"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.40","digest":"sha256:2883ca3e5ae9f330cafdd9345bfd4ae17fc8da36c96d4c9a1f76e922b4c45280","pinned_image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.40@sha256:2883ca3e5ae9f330cafdd9345bfd4ae17fc8da36c96d4c9a1f76e922b4c45280"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.25.40","digest":"sha256:b084f4a2c771f584ee68084ced52fa6b3245197a1889645d817462d307d3ac51","pinned_image":"ghcr.io/github/gh-aw-firewall/squid:0.25.40@sha256:b084f4a2c771f584ee68084ced52fa6b3245197a1889645d817462d307d3ac51"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.3.6","digest":"sha256:2bb8eef86006a4c5963c55616a9c51c32f27bfdecb023b8aa6f91f6718d9171c","pinned_image":"ghcr.io/github/gh-aw-mcpg:v0.3.6@sha256:2bb8eef86006a4c5963c55616a9c51c32f27bfdecb023b8aa6f91f6718d9171c"},{"image":"ghcr.io/github/github-mcp-server:v1.0.3","digest":"sha256:2ac27ef03461ef2b877031b838a7d1fd7f12b12d4ace7796d8cad91446d55959","pinned_image":"ghcr.io/github/github-mcp-server:v1.0.3@sha256:2ac27ef03461ef2b877031b838a7d1fd7f12b12d4ace7796d8cad91446d55959"},{"image":"node:lts-alpine","digest":"sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f","pinned_image":"node:lts-alpine@sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f"}]}
 #    ___                   _   _      
 #   / _ \                 | | (_)     
@@ -260,20 +260,20 @@ jobs:
         run: |
           bash "${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh"
           {
-          cat << 'GH_AW_PROMPT_775632f7799379e6_EOF'
+          cat << 'GH_AW_PROMPT_71918f91dfd77e9f_EOF'
           <system>
-          GH_AW_PROMPT_775632f7799379e6_EOF
+          GH_AW_PROMPT_71918f91dfd77e9f_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_775632f7799379e6_EOF'
+          cat << 'GH_AW_PROMPT_71918f91dfd77e9f_EOF'
           <safe-output-tools>
           Tools: create_issue, missing_tool, missing_data, noop
           </safe-output-tools>
-          GH_AW_PROMPT_775632f7799379e6_EOF
+          GH_AW_PROMPT_71918f91dfd77e9f_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/mcp_cli_tools_prompt.md"
-          cat << 'GH_AW_PROMPT_775632f7799379e6_EOF'
+          cat << 'GH_AW_PROMPT_71918f91dfd77e9f_EOF'
           <github-context>
           The following GitHub context information is available for this workflow:
           {{#if __GH_AW_GITHUB_ACTOR__ }}
@@ -302,9 +302,9 @@ jobs:
           {{/if}}
           </github-context>
           
-          GH_AW_PROMPT_775632f7799379e6_EOF
+          GH_AW_PROMPT_71918f91dfd77e9f_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
-          cat << 'GH_AW_PROMPT_775632f7799379e6_EOF'
+          cat << 'GH_AW_PROMPT_71918f91dfd77e9f_EOF'
           </system>
           ## Formatting Guidelines
           
@@ -480,7 +480,7 @@ jobs:
           
           __GH_AW_EXPR_49B959F1__
           
-          GH_AW_PROMPT_775632f7799379e6_EOF
+          GH_AW_PROMPT_71918f91dfd77e9f_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -632,7 +632,7 @@ jobs:
         name: Compute sweep targets
         run: "set -eu\nmkdir -p /tmp/gh-aw/sweep-data/scope\n\nTARGET_PATH_CLEAN=${TARGET_PATH#/}\nTARGET_PATH_CLEAN=${TARGET_PATH_CLEAN%/}\nDOCS_ROOT_CLEAN=${DOCS_ROOT%/}\nSCOPE_ROOT=\"$DOCS_ROOT\"\nREQUESTED_SCOPE_MODE=\"$SCOPE_MODE\"\nSELECTION_MODE=\"shard\"\n\ncase \"$REQUESTED_SCOPE_MODE\" in\n  auto|full|shard) ;;\n  *)\n    echo \"scope-mode '$REQUESTED_SCOPE_MODE' must be one of: auto, full, shard\"\n    exit 1\n    ;;\nesac\n\nif [ -n \"$TARGET_PATH_CLEAN\" ]; then\n  if [ \"$DOCS_ROOT_CLEAN\" = \".\" ] || [ -z \"$DOCS_ROOT_CLEAN\" ]; then\n    SCOPE_ROOT=\"$TARGET_PATH_CLEAN\"\n  else\n    SCOPE_ROOT=\"$DOCS_ROOT_CLEAN/$TARGET_PATH_CLEAN\"\n  fi\nfi\n\nif [ \"$REQUESTED_SCOPE_MODE\" = \"auto\" ]; then\n  if [ -n \"$TARGET_PATH_CLEAN\" ]; then\n    SELECTION_MODE=\"full\"\n  else\n    SELECTION_MODE=\"shard\"\n  fi\nelse\n  SELECTION_MODE=\"$REQUESTED_SCOPE_MODE\"\nfi\n\nif [ ! -d \"$SCOPE_ROOT\" ]; then\n  echo \"scope root '$SCOPE_ROOT' does not exist; producing empty scope\"\n  : > /tmp/gh-aw/sweep-data/all.txt\n  : > /tmp/gh-aw/sweep-data/shard.txt\n  : > /tmp/gh-aw/sweep-data/recent.txt\n  : > /tmp/gh-aw/sweep-data/in-scope.txt\n  echo '{\"total\":0,\"shard_n\":1,\"shard_slot\":0,\"shard_count\":0,\"recent_count\":0,\"in_scope_count\":0,\"iso_week\":\"'\"$(date +%G-W%V)\"'\",\"docs_root\":\"'\"$DOCS_ROOT\"'\",\"scope_mode\":\"'\"$REQUESTED_SCOPE_MODE\"'\",\"selection_mode\":\"'\"$SELECTION_MODE\"'\",\"target_path\":\"'\"$TARGET_PATH_CLEAN\"'\",\"scope_root\":\"'\"$SCOPE_ROOT\"'\"}' > /tmp/gh-aw/sweep-data/stats.json\n  exit 0\nfi\n\nfind \"$SCOPE_ROOT\" -type f -name '*.md' \\\n  -not -path '*/node_modules/*' \\\n  -not -path '*/.git/*' \\\n  | sort > /tmp/gh-aw/sweep-data/all.txt\n\nTOTAL=$(wc -l < /tmp/gh-aw/sweep-data/all.txt | tr -d ' ')\nif [ \"$SELECTION_MODE\" = \"full\" ]; then\n  N=1\n  SLOT=0\n  cp /tmp/gh-aw/sweep-data/all.txt /tmp/gh-aw/sweep-data/shard.txt\n  : > /tmp/gh-aw/sweep-data/recent.txt\nelse\n  if [ \"$TOTAL\" -eq 0 ]; then\n    N=1\n  else\n    N=$(( (TOTAL + TARGET_BATCH - 1) / TARGET_BATCH ))\n  fi\n  ISO_WEEK_NUM=$(date +%V | sed 's/^0//')\n  SLOT=$(( ISO_WEEK_NUM % N ))\n\n  : > /tmp/gh-aw/sweep-data/shard.txt\n  while IFS= read -r f; do\n    [ -z \"$f\" ] && continue\n    HEX=$(printf '%s' \"$f\" | shasum -a 256 | cut -c1-4)\n    HASH_NUM=$(( 16#$HEX ))\n    if [ $((HASH_NUM % N)) -eq \"$SLOT\" ]; then\n      echo \"$f\" >> /tmp/gh-aw/sweep-data/shard.txt\n    fi\n  done < /tmp/gh-aw/sweep-data/all.txt\n\n  git log --since='2 days ago' --name-only --pretty=format: -- \"$DOCS_ROOT/*.md\" \"$DOCS_ROOT/**/*.md\" 2>/dev/null \\\n    | grep -E '\\.md$' \\\n    | sort -u > /tmp/gh-aw/sweep-data/recent.txt || true\n\n  # Cap the recently-changed pass: if a corpus-wide rebase or migration\n  # touched far more pages than one slice, fall back to slice-only so\n  # rotation actually rotates.\n  RECENT_RAW=$(wc -l < /tmp/gh-aw/sweep-data/recent.txt | tr -d ' ')\n  RECENT_LIMIT=$(( TARGET_BATCH * 2 ))\n  if [ \"$RECENT_RAW\" -gt \"$RECENT_LIMIT\" ]; then\n    echo \"recently-changed pass produced $RECENT_RAW pages (>2x target batch $TARGET_BATCH); disabling for this run\"\n    : > /tmp/gh-aw/sweep-data/recent.txt\n  fi\nfi\n\nif [ \"$SELECTION_MODE\" = \"full\" ]; then\n  cp /tmp/gh-aw/sweep-data/all.txt /tmp/gh-aw/sweep-data/in-scope.txt\nelse\n  sort -u /tmp/gh-aw/sweep-data/shard.txt /tmp/gh-aw/sweep-data/recent.txt \\\n    | grep -v '^$' > /tmp/gh-aw/sweep-data/in-scope.txt || true\nfi\n\nwhile IFS= read -r f; do\n  [ -z \"$f\" ] && continue\n  [ ! -f \"$f\" ] && continue\n  mkdir -p \"/tmp/gh-aw/sweep-data/scope/$(dirname \"$f\")\"\n  cp \"$f\" \"/tmp/gh-aw/sweep-data/scope/$f\"\ndone < /tmp/gh-aw/sweep-data/in-scope.txt\n\nSHARD_COUNT=$(wc -l < /tmp/gh-aw/sweep-data/shard.txt | tr -d ' ')\nRECENT_COUNT=$(wc -l < /tmp/gh-aw/sweep-data/recent.txt | tr -d ' ')\nIN_SCOPE_COUNT=$(wc -l < /tmp/gh-aw/sweep-data/in-scope.txt | tr -d ' ')\n\ncat > /tmp/gh-aw/sweep-data/stats.json <<EOF\n{\n  \"total\": $TOTAL,\n  \"shard_n\": $N,\n  \"shard_slot\": $SLOT,\n  \"shard_count\": $SHARD_COUNT,\n  \"recent_count\": $RECENT_COUNT,\n  \"in_scope_count\": $IN_SCOPE_COUNT,\n  \"iso_week\": \"$(date +%G-W%V)\",\n  \"docs_root\": \"$DOCS_ROOT\",\n  \"scope_mode\": \"$REQUESTED_SCOPE_MODE\",\n  \"selection_mode\": \"$SELECTION_MODE\",\n  \"target_path\": \"$TARGET_PATH_CLEAN\",\n  \"scope_root\": \"$SCOPE_ROOT\"\n}\nEOF\n\necho \"Sweep targets: scope_mode=$REQUESTED_SCOPE_MODE mode=$SELECTION_MODE scope_root=$SCOPE_ROOT total=$TOTAL N=$N slot=$SLOT shard=$SHARD_COUNT recent=$RECENT_COUNT in_scope=$IN_SCOPE_COUNT\"\n"
       - env:
-          VALE_VERSION: 3.12.0
+          VALE_VERSION: 3.24.0
         name: Install Vale and elastic/vale-rules
         run: "set -eu\nmkdir -p /tmp/gh-aw/bin\n\n# Download the Vale binary into a path the agent container shares\ncurl -fsSL \"https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz\" \\\n  -o /tmp/vale.tar.gz\ntar -xz -C /tmp/gh-aw/bin -f /tmp/vale.tar.gz vale\nchmod +x /tmp/gh-aw/bin/vale\nrm /tmp/vale.tar.gz\n\n# Clone elastic/vale-rules (StylesPath in its .vale.ini is `styles`,\n# resolved relative to the .vale.ini file's directory).\ngit clone --depth 1 https://github.com/elastic/vale-rules.git /tmp/gh-aw/vale-rules\n\n/tmp/gh-aw/bin/vale --version\nls -la /tmp/gh-aw/vale-rules/.vale.ini\n"
       - name: Run Vale on slice
@@ -704,9 +704,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/gh-aw/safeoutputs"
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_b868a84b2411b36a_EOF'
+          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_9c3938eaf2a96ecf_EOF'
           {"create_issue":{"labels":["docs-quality-sweep","docs-fix:style"],"max":1,"title_prefix":"Docs fix — style: "},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"},"report_incomplete":{}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_b868a84b2411b36a_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_9c3938eaf2a96ecf_EOF
       - name: Generate Safe Outputs Tools
         env:
           GH_AW_TOOLS_META_JSON: |
@@ -906,7 +906,7 @@ jobs:
           
           mkdir -p /home/runner/.copilot
           GH_AW_NODE=$(which node 2>/dev/null || command -v node 2>/dev/null || echo node)
-          cat << GH_AW_MCP_CONFIG_75d01a91719f4d81_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
+          cat << GH_AW_MCP_CONFIG_97a3c0d1a491ac2b_EOF | "$GH_AW_NODE" "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.cjs"
           {
             "mcpServers": {
               "elastic-docs": {
@@ -961,7 +961,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_75d01a91719f4d81_EOF
+          GH_AW_MCP_CONFIG_97a3c0d1a491ac2b_EOF
       - name: Mount MCP servers as CLIs
         id: mount-mcp-clis
         continue-on-error: true
